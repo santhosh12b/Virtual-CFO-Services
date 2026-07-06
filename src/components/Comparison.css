@@ -1,0 +1,140 @@
+.comparison {
+  padding: 120px 0;
+  background: var(--bg-color);
+  position: relative;
+}
+
+.comparison-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 60px auto 0;
+  gap: 0;
+}
+
+.comp-card {
+  flex: 1;
+  padding: 48px;
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.traditional-card {
+  background: #f8fafc;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 64px;
+  color: #64748b;
+  z-index: 1;
+}
+
+.traditional-card .comp-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+.modern-card {
+  background: #ffffff;
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 40px 80px rgba(124, 58, 237, 0.15);
+  transform: scale(1.08);
+  z-index: 10;
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.modern-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 50px 100px rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary-blue), #9333ea);
+  color: white;
+  padding: 10px 28px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.modern-card .comp-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--primary-blue);
+}
+
+.comp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.comp-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.modern-card .comp-item {
+  color: var(--text-primary);
+}
+
+.icon-red {
+  color: #cbd5e1; /* Muted gray for the bad side */
+  flex-shrink: 0;
+}
+
+.icon-blue {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.3));
+}
+
+@media (max-width: 992px) {
+  .modern-card {
+    transform: scale(1.02);
+  }
+  .modern-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-cards-wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .traditional-card {
+    border-radius: 24px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    padding: 32px;
+  }
+  .modern-card {
+    transform: scale(1);
+    padding: 48px 32px;
+  }
+  .modern-card:hover {
+    transform: translateY(-8px);
+  }
+}

@@ -1,0 +1,38 @@
+.industries-section {
+  padding-bottom: 80px;
+}
+
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.industry-pill {
+  padding: 16px 32px;
+  background: var(--surface-light);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.industry-pill:hover {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: var(--primary-light);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .industry-pill {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
