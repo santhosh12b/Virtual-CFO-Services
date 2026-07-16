@@ -1,83 +1,97 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle, TrendingDown, Clock, ShieldAlert } from 'lucide-react';
+import { CalendarX2, TrendingDown, ShieldAlert, Clock, Users } from 'lucide-react';
 import './Challenges.css';
 
 const Challenges = () => {
+  const challenges = [
+    {
+      id: 1,
+      title: "Weekend Accounting",
+      desc: "Sacrificing your weekends to reconcile books instead of growing your business or getting much-needed rest.",
+      icon: CalendarX2,
+      className: "bento-wide"
+    },
+    {
+      id: 2,
+      title: "Cash Flow Blindness",
+      desc: "Making critical decisions in the dark without a clear, real-time view of your profits and runway.",
+      icon: TrendingDown,
+      className: "bento-square"
+    },
+    {
+      id: 3,
+      title: "Compliance Stress",
+      desc: "Constant anxiety over missed GST deadlines, changing tax laws, and potential penalties.",
+      icon: ShieldAlert,
+      className: "bento-square"
+    },
+    {
+      id: 4,
+      title: "Delayed Reporting",
+      desc: "Waiting weeks for monthly financial reports that are already outdated.",
+      icon: Clock,
+      className: "bento-square"
+    },
+    {
+      id: 5,
+      title: "Fragmented Comms",
+      desc: "Chasing down different people for payroll, taxes, and bookkeeping updates.",
+      icon: Users,
+      className: "bento-square"
+    }
+  ];
+
   return (
-    <section className="challenges">
+    <section className="challenges-premium">
       <div className="container">
-        <div className="challenges-layout">
-          <div className="challenges-text">
-            <span className="section-tag">The Problem</span>
-            <h2 className="section-title">Are these challenges holding back your <span className="gradient-text">growth?</span></h2>
-            <p className="challenges-desc">Most growing businesses struggle because they lack proper financial leadership. Historical accounting isn't enough to make future-focused decisions.</p>
-            
-            <div className="challenges-list">
-              {[
-                { icon: AlertCircle, title: "Poor Cash Flow Visibility", desc: "Struggling to predict cash runway and manage working capital efficiently." },
-                { icon: TrendingDown, title: "Low Profitability Margins", desc: "Revenue is growing, but profits aren't scaling proportionally." },
-                { icon: Clock, title: "Delayed Financial Reporting", desc: "Making decisions based on months-old data instead of real-time insights." },
-                { icon: ShieldAlert, title: "Tax & Compliance Risks", desc: "Facing unexpected penalties due to poor regulatory compliance." }
-              ].map((item, index) => (
-                <motion.div 
-                  className="challenge-item group"
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15, duration: 0.5 }}
-                >
-                  <div className="challenge-icon-box">
-                    <item.icon size={20} />
-                  </div>
-                  <div className="challenge-text-box">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div className="challenges-visual">
+        
+        <div className="cp-header">
+          <motion.div 
+            className="cp-tag"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="cp-dot"></span>
+            The Reality
+          </motion.div>
+          
+          <motion.h2 
+            className="cp-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Growing a business is hard.<br/>
+            <span className="text-gray">Managing finances shouldn't be.</span>
+          </motion.h2>
+        </div>
+
+        <div className="cp-bento-grid">
+          {challenges.map((item, index) => (
             <motion.div 
-              className="challenge-illustration"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={item.id}
+              className={`cp-bento-card ${item.className}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.1 * index, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="illustration-card dark-glass-card">
-                <div className="card-header">Cash Flow Projection</div>
-                <div className="chart-down">
-                  <svg viewBox="0 0 100 50" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="rgba(248, 113, 113, 0.4)" />
-                        <stop offset="100%" stopColor="rgba(248, 113, 113, 0)" />
-                      </linearGradient>
-                      <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                        <feMerge>
-                          <feMergeNode in="coloredBlur"/>
-                          <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                      </filter>
-                    </defs>
-                    <path d="M0,10 L20,30 L40,20 L60,40 L80,35 L100,50" fill="none" stroke="#f87171" strokeWidth="2.5" filter="url(#glow)"/>
-                    <path d="M0,10 L20,30 L40,20 L60,40 L80,35 L100,50 L100,50 L0,50 Z" fill="url(#redGradient)" />
-                  </svg>
+              <div className="cp-card-inner">
+                <div className="cp-icon-wrapper">
+                  <item.icon size={24} strokeWidth={1.5} />
                 </div>
-                <div className="alert-badge"><span className="pulse-dot"></span> Critical Warning</div>
-              </div>
-              <div className="illustration-card dark-glass-card offset">
-                <div className="card-header">Compliance Status</div>
-                <div className="status-row"><span className="neon-dot red"></span> GST Filing Delayed</div>
-                <div className="status-row"><span className="neon-dot red"></span> ROC Pending</div>
-                <div className="status-row"><span className="neon-dot yellow"></span> Tax Audit Due</div>
+                <div className="cp-text-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
               </div>
             </motion.div>
-          </div>
+          ))}
         </div>
+        
       </div>
     </section>
   );

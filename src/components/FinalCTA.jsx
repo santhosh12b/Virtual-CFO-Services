@@ -15,13 +15,12 @@ const FinalCTA = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="cta-glow"></div>
-          <h2>Your Business Deserves Better <span className="blue-gradient-text">Financial Leadership</span></h2>
-          <p>Book your free consultation today and discover how CFO Bridge can help you grow with confidence.</p>
+          <h2>Ready to Simplify Your <span className="blue-gradient-text">Business Finances?</span></h2>
+          <p>Book your FREE Finance Health Check.</p>
           <div className="cta-actions">
             <button className="btn btn-primary btn-lg">
-              Book Free Consultation <ArrowRight size={20} />
+              Book Your Meeting <ArrowRight size={20} />
             </button>
-            <button className="btn btn-secondary btn-lg">Schedule a Call</button>
           </div>
         </motion.div>
       </div>

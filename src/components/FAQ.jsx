@@ -5,20 +5,28 @@ import './FAQ.css';
 
 const faqs = [
   {
-    q: "How is a Virtual CFO different from a standard accountant?",
-    a: "An accountant focuses on historical data and compliance (what happened). A Virtual CFO focuses on the future—forecasting, strategy, profitability, and growth (what's next)."
+    q: "Can you work with my existing CA?",
+    a: "Yes, we can collaborate with your existing CA and handle your day-to-day accounting, payroll, and monthly reporting."
   },
   {
-    q: "Do I have to switch my current accounting team?",
-    a: "Not at all. We often work alongside your existing accountants or bookkeepers, providing the strategic upper-level leadership they may lack."
+    q: "Do you support GST?",
+    a: "Absolutely. We manage end-to-end GST compliance, including return filing and reconciliation, ensuring you stay compliant and avoid penalties."
   },
   {
-    q: "What size businesses do you typically work with?",
-    a: "We partner with growing startups and SMEs across various industries who need financial leadership but aren't ready to hire a full-time, in-house CFO."
+    q: "Do you provide monthly reports?",
+    a: "Yes, we provide detailed monthly financial reports including Profit & Loss, Balance Sheet, and Cash Flow statements."
   },
   {
-    q: "How much does a Virtual CFO cost?",
-    a: "It's a fraction of the cost of a full-time CFO. Pricing is customized based on your business size, complexity, and specific needs. Book a consultation for a detailed quote."
+    q: "Can you manage payroll?",
+    a: "Yes, we offer complete payroll management, ensuring accurate processing and timely compliance every month."
+  },
+  {
+    q: "Do you work with startups?",
+    a: "Yes, we specialize in helping startups, MSMEs, and service businesses establish strong financial processes from day one."
+  },
+  {
+    q: "Can you migrate from my existing accountant?",
+    a: "Yes, we handle the entire transition process seamlessly, transferring your historical data and setting up efficient systems without disrupting your business."
   }
 ];
 

@@ -4,14 +4,14 @@ import { Rocket, Factory, Stethoscope, Monitor, ShoppingBag, Building, Globe, Tr
 import './Audience.css';
 
 const audiences = [
-  { icon: <Rocket size={24} />, title: "Startups", desc: "Scale faster with clear financial visibility." },
-  { icon: <TrendingUp size={24} />, title: "SMEs", desc: "Optimize cash flow and streamline operations." },
-  { icon: <Factory size={24} />, title: "Manufacturing", desc: "Control costs and improve margins." },
-  { icon: <Stethoscope size={24} />, title: "Healthcare", desc: "Ensure compliance and sustainable growth." },
-  { icon: <Monitor size={24} />, title: "IT Companies", desc: "Manage project profitability." },
-  { icon: <ShoppingBag size={24} />, title: "Retail", desc: "Inventory and cash flow management." },
-  { icon: <Building size={24} />, title: "Construction", desc: "Project financial tracking." },
-  { icon: <Globe size={24} />, title: "Export & Import", desc: "Manage forex and working capital." }
+  { icon: <Rocket size={24} />, title: "Startups", desc: "" },
+  { icon: <TrendingUp size={24} />, title: "MSMEs", desc: "" },
+  { icon: <Globe size={24} />, title: "Service Businesses", desc: "" },
+  { icon: <Building size={24} />, title: "Agencies", desc: "" },
+  { icon: <Monitor size={24} />, title: "IT Companies", desc: "" },
+  { icon: <Factory size={24} />, title: "Manufacturers", desc: "" },
+  { icon: <ShoppingBag size={24} />, title: "Traders", desc: "" },
+  { icon: <ShoppingBag size={24} />, title: "Retail Businesses", desc: "" }
 ];
 
 const Audience = () => {
@@ -19,24 +19,21 @@ const Audience = () => {
     <section className="audience">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Who We Serve</span>
-          <h2 className="section-title">Built for <span className="blue-gradient-text">Growing Businesses</span></h2>
-          <p className="section-subtitle">Tailored financial leadership for modern enterprises across industries.</p>
+          <span className="section-tag">Who We Help</span>
+          <h2 className="section-title">Perfect <span className="blue-gradient-text">for</span></h2>
         </div>
-        <div className="grid-4">
+        <div className="audience-pill-cloud">
           {audiences.map((item, index) => (
             <motion.div 
-              className="card audience-card" 
+              className="audience-pill" 
               key={index}
-              whileHover={{ y: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.1, duration: 0.5, type: 'spring', stiffness: 100 }}
             >
-              <div className="audience-icon">{item.icon}</div>
-              <h3 className="audience-title">{item.title}</h3>
-              <p className="audience-desc">{item.desc}</p>
+              <div className="audience-pill-icon">{item.icon}</div>
+              <span className="audience-pill-title">{item.title}</span>
             </motion.div>
           ))}
         </div>

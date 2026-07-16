@@ -1,6 +1,5 @@
 .timeline-section {
   position: relative;
-  padding: 120px 0;
   background: var(--bg-color);
 }
 
@@ -128,5 +127,6 @@
   }
   .timeline-content {
     padding: 24px;
+    margin-bottom: 24px;
   }
 }

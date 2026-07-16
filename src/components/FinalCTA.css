@@ -58,5 +58,11 @@
   }
   .cta-actions {
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

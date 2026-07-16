@@ -22,25 +22,22 @@ function App() {
       <header className="header-premium">
         <div className="header-container">
           <a href="/" className="logo-link">
-            <img src="/logo-primary.svg" alt="CFO Bridge" className="logo-img" />
+            <img src="/logo-primary.svg" alt="AuditCare Logo" className="logo-img" />
           </a>
           <div className="header-actions">
-            <a href="#contact" className="btn btn-primary header-cta">Contact Us</a>
+            <a href="#contact" className="btn btn-primary header-cta">Book Your Meeting</a>
           </div>
         </div>
       </header>
 
       <main>
         <Hero />
-        <TrustedBy />
-        <Audience />
         <Challenges />
         <Services />
-        <Benefits />
-        <Timeline />
+        <Audience />
         <WhyUs />
-        <Comparison />
-        <Industries />
+        <Timeline />
+        <Benefits />
         <Testimonials />
         <FAQ />
         <FinalCTA />
@@ -53,15 +50,34 @@ function App() {
           </svg>
         </div>
         <div className="container">
-          <div className="footer-content">
-            <img src="/logo-primary.svg" alt="CFO Bridge" className="logo-img footer-logo" />
-            <p className="footer-text">Your Strategic Financial Partner for Smarter Business Growth.</p>
+          <div className="footer-content" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', textAlign: 'left', flexWrap: 'wrap', gap: '2rem', width: '100%' }}>
+            <div style={{ maxWidth: '300px' }}>
+              <img src="/logo-primary.svg" alt="AuditCare Logo" className="footer-logo" />
+              <p className="footer-text" style={{ margin: 0, textAlign: 'left' }}>Your Dedicated Accounting & Compliance Partner.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>Accounting</a>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>Compliance</a>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>GST</a>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>Payroll</a>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>Financial Reporting</a>
+                <a href="#" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', fontWeight: 500 }}>Privacy Policy</a>
+              </div>
+            </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} CFO Bridge. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AuditCare. All rights reserved.</p>
           </div>
         </div>
       </footer>
+
+      {/* Mobile Sticky CTA */}
+      <div className="mobile-sticky-cta">
+        <a href="#contact" className="btn btn-primary" style={{ width: '100%' }}>Book a Meeting</a>
+      </div>
     </div>
   );
 }

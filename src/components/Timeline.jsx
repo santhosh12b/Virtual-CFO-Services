@@ -4,12 +4,10 @@ import { PhoneCall, ClipboardList, PieChart, Lightbulb, TrendingUp, Rocket } fro
 import './Timeline.css';
 
 const timelineSteps = [
-  { icon: <PhoneCall />, title: "Discovery Call", desc: "Understanding your current financial situation." },
-  { icon: <ClipboardList />, title: "Business Assessment", desc: "Deep dive into operations and numbers." },
-  { icon: <PieChart />, title: "Financial Analysis", desc: "Identifying gaps and opportunities." },
-  { icon: <Lightbulb />, title: "Financial Strategy", desc: "Creating a custom roadmap for success." },
-  { icon: <TrendingUp />, title: "Monthly CFO Support", desc: "Execution, reporting, and advisory." },
-  { icon: <Rocket />, title: "Business Growth", desc: "Scaling safely and profitably." }
+  { icon: <PhoneCall />, title: "Book a FREE Finance Health Check", desc: "" },
+  { icon: <ClipboardList />, title: "Understand Your Current Process", desc: "" },
+  { icon: <Lightbulb />, title: "Receive a Customized Plan", desc: "" },
+  { icon: <Rocket />, title: "Relax While We Handle Your Accounts", desc: "" }
 ];
 
 const Timeline = () => {
@@ -18,8 +16,7 @@ const Timeline = () => {
       <div className="container">
         <div className="section-header">
           <span className="section-tag">Process</span>
-          <h2 className="section-title">How Virtual CFO <span className="blue-gradient-text">Works</span></h2>
-          <p className="section-subtitle">A seamless journey from chaos to financial clarity.</p>
+          <h2 className="section-title">How It <span className="blue-gradient-text">Works</span></h2>
         </div>
 
         <div className="timeline">
@@ -37,9 +34,9 @@ const Timeline = () => {
                 {index !== timelineSteps.length - 1 && <div className="timeline-line"></div>}
               </div>
               <div className="timeline-content">
-                <div className="step-number">0{index + 1}</div>
+                <div className="step-number">Step {index + 1}</div>
                 <h4>{step.title}</h4>
-                <p>{step.desc}</p>
+                {step.desc && <p>{step.desc}</p>}
               </div>
             </motion.div>
           ))}
